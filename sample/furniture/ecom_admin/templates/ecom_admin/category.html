@@ -1,0 +1,68 @@
+{% extends "ecom_admin/master.html" %}
+{% load static %}
+{% block title %}category{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/category.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>{% endblock %}
+
+{% block body %}
+    <h2>CATEGORY LIST</h2>
+    <div class="btn-div">
+        <div class="button">
+            <button id="btn">Add category</button>
+        </div>
+    </div>
+    <div style="display: none;" id="box-add">
+        <div class="add"  >
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <br>
+                <label for="">category-name</label><br>
+                <input type="text" name="a_category"><br><br>
+                <label for="">Description</label><br>
+                <textarea name="a_description" id="" cols="40" rows="12"></textarea><br><br>
+                <label for="" id="">Image</label>
+                <input type="file" name="cate_image">
+                <button id="btn2" type="submit">Add</button>
+                <button id="btn3" type="submit">close</button>
+               
+            </form>
+          
+        </div>
+    </div>
+   <div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>CART_ID</th>
+                <th>CATEGORY<br>NAME</th>
+                <th>DESCRIPTION</th>
+                <th>IMAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr> 
+                <td>{{ forloop.counter }}</td>
+                <td>{{i.category_name}}</td>
+                <td>{{i.description}}</td>
+                <td><img id="category_image" src="{{i.image.url}}" alt=""></td>
+
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   </div>
+
+   <script>
+    $(document).ready(function(){
+        $('#btn').click(function(){
+            $('#box-add').css('display','block');  
+        })
+
+        $('#btn3').click(function(){
+            $('#box-add').css('display','none');
+        })
+    })
+</script>
+{% endblock %}

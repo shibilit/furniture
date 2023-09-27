@@ -1,0 +1,40 @@
+{% extends "ecom_admin/master.html" %}
+{% load static %}
+{% block title %}seller list{% endblock %}
+{% block head %} <link rel="stylesheet" href="{% static 'css/seller_list.css' %}">{% endblock %}
+   
+  {% block body %}
+
+    <h2>SELLERS</h2>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>S NO</th>
+                    <th>NAME</th>
+                    <th>GENDER</th>
+                    <th>COMPANY NAME</th>
+                    <th>PHONE</th>
+                    <th>E-MAIL</th>
+                    <th>BANK-AC-NO</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.gender}}</td>
+                    <td>{{i.company_name}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.e_mail}}</td>
+                    <td>{{i.accNo}}</td>
+                    <td><img id="seller_img"  src="{{i.image.url}}"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% endblock %}

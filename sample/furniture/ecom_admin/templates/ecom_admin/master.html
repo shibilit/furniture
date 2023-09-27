@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}{% endblock %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        h1,
+        h2 {
+            color: #444;
+        }
+
+        h3 {
+            color: #999;
+        }
+
+        .btn {
+            background: black;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            color: black;
+            background: rgb(250, 250, 215);
+            padding: 3px 8px;
+            border: 2px solid rgb(61, 27, 27);
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 15px 10px;
+            border-bottom: 2px solid #999;
+
+
+        }
+
+        table {
+            padding: 10px;
+        }
+
+        th,
+        td {
+            text-align: center;
+            padding: 8px;
+        }
+
+        .side-menu {
+            position: fixed;
+            background:#F7F4EB;
+            width: 20vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-menu .brand-name {
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .side-menu li {
+            font-size: 23px;
+            padding: 10px 40px;
+            color: black;
+            display: flex;
+            align-items: center;
+
+        }
+        .side-menu li a{
+            color: black;
+        }
+
+        .side-menu li:hover{
+            background-color: rgb(116, 101, 101);
+            color:#fff;
+        }
+        .side-menu li a:hover{
+            color: #fff;
+        }
+
+        .container {
+            position: absolute;
+            right: 0;
+            width: 80vw;
+            height: 100vh;
+            background: #f1f1f1;
+        }
+
+        .container .header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80vw;
+            height: 10vh;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .container .header .nav {
+            width: 90%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .container .header .nav .search {
+            flex: 3;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .container .header .nav .search input[type=text] {
+            border: none;
+            background: #f1f1f1;
+            padding: 10px;
+            width: 50%;
+        }
+
+        .container .header .nav .search button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-self: center;
+            border-radius: 5px;
+
+
+        }
+
+        .container .header .nav .search button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .container .header .nav .user {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .container .header .nav .user img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .container .header .nav .user .img-case {
+            position: relative;
+            width: 50px;
+            height: 50px;
+        }
+
+        .container .header .nav .user .img-case img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+        }
+
+     
+    </style>
+</head>
+
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+          <h1>ΞLIΓΞ</h1>
+        </div>
+        <ul>
+          <li><img src="{% static 'images/dashboard.png' %}" ><span> <a href="{% url 'ecom_admin:home' %}"> Dashboard</a></span></li>
+          <li><img src="{% static 'images/approve.png' %}" > <span><a href="{% url 'ecom_admin:approve_seller' %}" >Approve seller</a> </span> </li>
+          <li><img src="{% static 'images/category.png' %}" > <span><a href="{% url 'ecom_admin:category' %}" >Category</a> </span></li>
+          <li><img src="{% static 'images/customer.png' %}" > <span><a href="{% url 'ecom_admin:customer_list' %}" >Customer list</a></span> </li>
+          <li><img src="{% static 'images/seller.png' %}" > <span><a href="{% url 'ecom_admin:seller_list' %}" >Seller list</a> </span> </li>
+          <li><img src="{% static 'images/settings.png' %}" > <span><a href=""> Settings</a></span> </li>
+    
+        </ul>
+      </div>
+      <div class="container">
+        <div class="header">
+          <div class="nav">
+            <div class="search">
+              <input type="text" placeholder="search">
+              <button type="submit"><img src="{% static 'images/search.png' %}" alt=""></button>
+            </div>
+            <div class="user">
+              <a href="{% url 'ecom_admin:approve_seller' %}" class="btn">Add new</a>
+              <img src="{% static 'images/notification.png' %}" alt="">
+              <div class="img-case">
+                <a href="{% url 'ecom_admin:profile' %}"><img src="{% static 'images/user.png' %}" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% block body %}{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "seller/master.html" %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/seller_home.css' %}">{% endblock %}
+   
+  {% block body %}
+  <div class="products">
+    {% for i in data %}
+    <div class="items" >
+      <div class="sub" >
+        <a href=""><img  id="pro_img" src="{{i.pro_image.url}}" ></a>
+         <b>{{i.pro_name}}</b><br>
+        <span style="color: rgb(233, 113, 113);"><b>PRICE:</b> <b>{{i.pro_price}}</b> </span><br>
+        <span><b>Rating:</b></span> 
+       </div>
+    </div>
+      
+      {% endfor %}
+   </div>
+    {% endblock %}

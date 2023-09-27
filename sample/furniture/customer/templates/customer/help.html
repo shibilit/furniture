@@ -1,0 +1,19 @@
+{% extends "customer/master.html" %}
+{% load static %}
+{% block title %}help{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/customer_help.css' %}">{% endblock %}
+   
+  {% block body %}
+    
+    <div class="container">
+        <div class="sub">
+            <form action="">
+        <h2 id="h2">please write your opinion</h2>
+
+                <textarea name="" id="" cols="60" rows="15"></textarea><br>
+                <input type="mail" id="inp" placeholder="Enter your mail" >
+                <button type="submit" >submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/common_home.css' %}">
+    <style>
+     
+    </style>
+</head>
+
+<body>
+   <div class="main_home">
+    <nav>
+
+        <div class="left"> 
+            <div class="left_sub">
+                <h2 style="margin-left: 90px;">ΞLIΓΞ</h2>
+            </div>
+            <div class="left_sub">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="http://127.0.0.1:8000/common/about">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="center">
+            <input type="search" id="input" placeholder="Search......">
+        </div>
+        <div class="right">
+         <div class="box"><a href="http://127.0.0.1:8000/common/seller_reg">Become a seller</a></div>
+         <div class="box"><a href="http://127.0.0.1:8000/common/cust_login"> <button type="submit">signUp</button></a></div>
+        
+        </div>
+    </nav>
+    <h1 id="h11" >Furnish your dream<br> With our furniture!</h1>
+
+   </div>
+    
+    <div class="content">
+        <div class="child">
+            <p class="ads_p" >Sofa Collection</p><span style="color:white;font-size: 30px; font-family: Arial, Helvetica, sans-serif;  padding-left:330px;"><b>Starting From only </b></span>
+            <br>
+            <p style="color: rgb(243, 243, 8);font-size: 35px;  padding-left:530px;"><b>8599</b> </p>
+        </div>
+        <div class="child2">
+            <p class="ads_p2"> Sale Off</p>
+            <p style="color: rgb(243, 243, 8);font-size: 35px;  margin-left: 40px;"><b> Up to 50%</b></p>
+            <p style="font-size: 40px;  margin-left: 45px; color: #fff; font-family: Arial, Helvetica, sans-serif;"><b> For Chairs</b></p>
+        </div>
+    </div>
+    <div class="heading_txt">
+        <p>NEW ARRIVALS</p>
+    </div>
+     <div class="products" >
+      {% for i in data %}
+      <div class="items" >
+        <div class="sub">
+          <a href="{% url 'common:prod_list' i.id %}"><img id="pro_img" src="{{i.pro_image.url}}" ></a>
+           <b>{{i.pro_name}}</b><br>
+          <span style="color: rgb(233, 113, 113);"><b>PRICE:</b> <b>{{i.pro_price}}</b> </span><br>
+          <span><b>Rating:</b></span> 
+         </div>
+      </div>
+        
+        {% endfor %}
+     </div>
+    <div class="show_box">
+        <a href="http://127.0.0.1:8000/common/cust_login"><button type="submit" id="show">Show More</button></a>
+    </div>
+    <div class="container">
+        
+        <section class="showD">
+         <div class="leftt">
+             <h1>Exotic minimal furniture</h1>
+             <p>
+                 choose from a wide range of well-crafted premium quality wooden furniture online
+             </p>
+             <button id="btn2">Explore</button>
+         </div>
+         <div class="right2">
+             <img src="{% static 'images/chair14.png' %}" alt="" class="meanimg">
+         </div>
+        </section>
+        <section class="showM">
+         <div>
+             <img src="{% static 'images/chair17.png' %}" alt="">
+             <div class="info">
+                 <h4>Bruna Cush</h4>
+                 <b>$145.60</b>
+             </div>
+         </div>
+         <div>
+             <img src="{% static 'images/chair10.png' %}" alt="">
+             <div class="info">
+                 <h4>Drop Type</h4>
+                 <b>$265.50</b>
+             </div>
+         </div>
+         <div>
+             <img src="{% static 'images/chair13.png' %}" alt="">
+             <div class="info">
+                 <h4>Backboard</h4>
+                 <b>$160.00</b>
+             </div>
+         </div>
+        </section>
+     </div>
+     <br><br>
+     <!-- /////////////////////foooter \\\\\\\\\\\\\\\\\\\\\\\-->
+     <div class="contanier_footer">
+        <div class="container_sub">
+            <div class="div_1">
+               <h3>TOP CATEGORIES</h3>
+               <li><a href="">Table</a> </li>
+               <li><a href="">Chair</a></li>
+               <li><a href="">Sofa</a></li>
+               <li><a href="">Bed</a></li>
+             </div>
+             <div class="div_2">
+                 <h3>HELP</h3>
+                 <li><a href="">Delivery</a></li>
+                 <li><a href="">Returns</a></li>
+                 <li><a href="">Track an order</a></li>
+                 <li><a href="">Contact us</a></li>
+              </div>
+              <div class="div_3">
+                 <h3>ABOUT US</h3>
+                 <li><a href="">Careers</a></li>
+                 <li><a href="">Terms & Conditios</a></li>
+                 <li><a href="">Privacy Policy</a></li>
+                 <li><a href="">Responsibility</a></li>
+              </div>
+              <div class="div_4">
+                 <h3>FEEDBACK</h3>
+                 <li>Leave a feedback</li>
+                 <input type="text" placeholder="Type something.....">
+                <button type="submit" style="width: 60px; height: 33px; border-radius: 8px;">submit</button>
+
+              </div>
+        </div>
+        <div class="container_sub2">
+            <div class="d1">
+                <h4>FIND A STORE</h4><br>
+                <button type="submit">STORE LOCATOR</button><br><br>
+                
+            </div>
+            <div class="d2">
+                <h5>FOLLOW US</h5>
+                <img src="{% static 'images/mainlogs (3).png' %}">
+                <img src="{% static 'images/mainlogs (2).png' %}">
+                <img src="{% static 'images/mainlogs (1).png' %}">
+                <img src="{% static 'images/youtube.png' %}">
+            </div>
+            <div class="d3">
+                <h5>NEWS LETTER SUBSCRIPTION</h5>
+                <p>Receive product news and upadtes in your mail</p>
+                <input type="text" placeholder="Enter your mail">
+                <button type="submit" style="width: 60px; height: 33px; border-radius: 8px;">submit</button>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

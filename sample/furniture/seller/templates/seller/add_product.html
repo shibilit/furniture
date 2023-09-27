@@ -1,0 +1,33 @@
+{% extends "seller/master.html" %}
+{% load static %}
+{% block title %}help{% endblock %}
+{% block head %}    <link rel="stylesheet" href="{% static 'css/add_produt.css' %}">{% endblock %}
+   
+  {% block body %}
+    
+  
+
+
+    <h1 style="color: #fff; font-family: Arial, Helvetica, sans-serif;">Add Product</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="">Product Name</label>
+        <input type="text" id="name" name="p_name" required>
+        <label  style="margin-left: 70px;">Product No<span style="margin-left: 170px;">Category</span> </label>
+        <input type="number" id="pro_number" name="p_number" placeholder="Product No" min="0">
+        <select name="p_category" id="pro_cat">
+            <option value="">category</option>
+            {% for i in data %}
+            <option value="{{i.id}}">{{i.category_name}}</option>
+            {% endfor %}
+        </select>
+        <label for=""  >Product Description</label>
+        <textarea id="description" name="p_description" rows="8" required></textarea>
+        <label  style="margin-left: 70px;">Price<span style="margin-left: 220px;">Quantity</span> </label>
+        <input type="number" id="price" name="p_price" min="0" placeholder="Price" required>
+        <input type="number" id="quantity" name="p_quantity" min="0" placeholder="Quantity" required>
+        <label style="margin-left: 150px;">Image</label>
+        <input type="file" id="image" name="p_image" required>
+        <button type="submit"  id="add_prod" > add Product</button>
+    </form>
+{% endblock %}

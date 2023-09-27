@@ -1,0 +1,30 @@
+
+.sub_div{
+    font-size: 15px;
+    
+}
+.products{
+    
+    margin-top: 30px;
+    margin-bottom: 10px; 
+    display: flex;
+    flex-wrap: wrap;  
+    width: 90%; 
+    margin-left: 70px; 
+    gap: 10px;
+ 
+}
+.products .sub{
+    width: 260px;
+    height: 380px;
+    margin-left: 25px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px #888888;
+}
+#pro_img{
+    width: 260px;
+    height: 300px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+   
+}

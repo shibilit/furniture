@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/seller_reg.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="sub">
+            <div class="left">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1 id="h1">Sign Up</h1><br><hr id="hr"><br>
+                    
+                    <input type="text" name="s_name" placeholder="Name*">
+                    <input type="text" name="s_company name" placeholder="company name*"> <br><br>
+                    <select  name="s_gender" id="option">Gender
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="text" name="s_bank_name" placeholder="Bank name*"> <br><br>
+                    <input type="email" name="s_email" placeholder="email*"> 
+                    <input type="text" name="s_company_address" placeholder="company_address*"> <br><br>
+                    <input type="number" name="s_num" placeholder="number*">
+                    <input type="text" name="s_account_holder_name" placeholder="AC holder name*"> <br><br> 
+                    <input type="text" name="s_address" placeholder="Address*"> 
+                    <input type="number" name="s_ac_number" placeholder="Ac number*"> <br><br>
+                    <input type="file" id="imgg" name="s_image" placeholder="Image">
+                    <input type="text"  name="s_ifsc" placeholder="IFSC*"><br><br>
+                    <button type="submit"><p>Sign Up</p></button> <br><br>
+                    
+                    <p id="p" class="new">already have an account?   <a href="http://127.0.0.1:8000/common/seller_login">Login</a></p>
+                </form>
+            </div>
+            <div class="right">
+                <img src="{% static 'images/reg2.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

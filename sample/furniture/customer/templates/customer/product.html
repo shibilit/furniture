@@ -1,0 +1,19 @@
+{% extends "customer/master.html" %}
+{% load static %}
+{% block title %}cart{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/product.css' %}"> {% endblock %}
+   
+  {% block body %}
+
+    <div class="products">
+      {% for i in data %}
+        <div class="sub">
+         <a href="{% url 'customer:product_dtls' i.id %}"><img src="{{i.pro_image.url}}" ></a>
+          <b>{{i.pro_name}}</b><br>
+         <span><b>₹ : </b>{{i.pro_price}}</span> 
+        </div>
+        {% endfor %}
+     </div>
+
+    {% endblock %}
+

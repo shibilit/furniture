@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: rgb(132, 153, 132);
+            width: 100%;
+            height: 400px;
+            display: flex;
+
+        }
+        .sub{
+            display: flex;
+            background-color: bisque;
+            padding: 30px;
+            /* margin-left: 100px;
+            margin-right: 100px; */
+            margin: auto;
+            width: 90%;
+            height: auto;
+        }
+        .sub .box1{
+            background-color: cadetblue;
+            width: 10%;
+            height: 100px;
+        }
+        .sub .box1 img{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            margin: auto;
+        }
+        .sub .box2{
+            background-color: rgb(153, 38, 134);
+            width: 20%;
+        }
+        .sub .box3{
+            background-color: rgb(199, 99, 32);
+            width: 35%;
+        }
+        .sub .box4{
+            background-color: rgb(128, 180, 32);
+            width: 35%;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+          <div class="sub">
+            <div class="box1">
+                <img src="{% static 'images/sofa3.png' %}" alt="">
+            </div>
+            <div class="box2">
+                <p>produt name</p>
+                <p>descrition</p>
+            </div>
+            <div class="box3">hi</div>
+            <div class="box4">
+                <p>order status</p>
+            </div>
+          </div>
+          
+    </div>
+</body>
+</html>

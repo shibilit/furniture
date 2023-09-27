@@ -1,0 +1,97 @@
+{% extends "ecom_admin/master.html" %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block head %} <link rel="stylesheet" href="{% static 'css/admin_home.css' %}">{% endblock %}
+   
+  {% block body %}
+ 
+
+    <div class="content">
+      <div class="cards">
+        <div class="card">
+          <div class="box">
+            <h1>{{customer_count}}</h1>
+            <h3>Total customers</h3>
+          </div>
+          <div class="icon-case">
+            <img src="{% static 'images/customer.png' %}" alt="">
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <h1>{{seller_count}}</h1>
+            <h3>Total sellers</h3>
+          </div>
+          <div class="icon-case">
+            <img src="{% static 'images/seller.png' %}" alt="">
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <h1>{{order_count}}</h1>
+            <h3>Total orders</h3>
+          </div>
+          <div class="icon-case">
+            <img src="{% static 'images/products.png' %}" alt="">
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <h1>2194</h1>
+            <h3>income</h3>
+          </div>
+          <div class="icon-case">
+            <img src="{% static 'images/wallet.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="content-2">
+        <div class="recent-paymet">
+          <div class="title">
+            <h2>New Sellers</h2>
+            <a href="{% url 'ecom_admin:seller_list' %}" class="btn">View All</a>
+          </div>
+          <table>
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th>Company Name</th>
+              <th>Image</th>
+            </tr>
+            {% for i in seller %}
+            <tr>
+              <td>{{forloop.counter}}</td>
+              <td>{{i.name}}</td>
+              <td>{{i.company_name}}</td>
+              <td><img id="seller_image" src="{{i.image.url}}" ></td>
+            </tr>
+
+            {% endfor %}
+            
+          </table>
+        </div>
+        <div class="new-customer">
+          <div class="title">
+            <h2>New Customers</h2>
+            <a href="{% url 'ecom_admin:customer_list' %}" class="btn">View All</a>
+          </div>
+          <table>
+            <tr>
+              <th>NO</th>
+              <th>Name</th>
+              <th>image</th>
+            </tr>
+            {% for i in customer %}
+            <tr>
+              <td>{{forloop.counter}}</td>
+              <td>{{i.name}}</td>
+              <td><img id="customer_image" src="{{i.image.url}}" ></td>
+            </tr>
+            {% endfor %}
+           
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

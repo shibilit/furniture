@@ -1,0 +1,271 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+
+
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            width: 100%;
+            height: 80px;
+            color: #fff;
+            box-shadow: 2px 2px 5px #888888;
+            background-color: lightblue;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            margin-top: 20px;
+            font-family: 'Kaushan Script', cursive;
+            font-family: 'Libre Baskerville', serif;
+            font-family: 'Poppins', sans-serif;
+            /* justify-content: space-between; */
+        }
+
+        nav li {
+            padding: 1rem;
+
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 19px;
+            font-weight: 100px;
+        }
+
+        nav a:hover {
+            color: #111110;
+        }
+
+        nav img {
+            width: 20px;
+            height: 30px;
+        }
+
+        input {
+            margin-left: 80px;
+            width: 400px;
+            height: 40px;
+            margin-top: 20px;
+
+            border-radius: 8px;
+
+        }
+
+        .left {
+            background-color: transparent;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            align-items: center;
+            color: black;
+
+
+        }
+/* 
+        #icon {
+            width: 50px;
+            height: 50px;
+        } */
+
+        .left ul {
+            margin-top: 7px;
+            /* margin-left: 60px; */
+            color: black;
+        }
+       
+        #name{
+         margin-right: 280px;
+        }
+        .center {
+            display: flex;
+            background-color: transparent;
+            width: 50%;
+
+        }
+
+        #input {
+            margin-right: 50px;
+        }
+
+        .right {
+            background-color: transparent;
+            color: black;
+            width: 20%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .right button {
+
+            width: 80px;
+            border-radius: 7px;
+            height: 30px;
+            font-size: 13px;
+            background-color: rgb(29, 28, 28);
+            color: white;
+        }
+
+        .right #profile img {
+            /* background-color: #f1c40f; */
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+        }
+
+        /* ////////////////////////////////content starting \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+        .container {
+            /* background-color: rgb(101, 173, 101); */
+            width: 90%;
+            height: 500px;
+            display: flex;
+            margin-left: 65px;
+            margin-top: 30px;
+        }
+
+        .left_about {
+            /* background-color: lightcoral; */
+            width: 20%;
+            border-radius: 0% 100% 0% 100% / 100% 56% 44% 0%;
+        }
+
+        .left_about h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 130%;
+            margin-left: 25px;
+            font-size: 35px;
+        }
+
+        .left_about p {
+            padding-left: 20px;
+            font-size: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .right_about {
+            width: 90%;
+            background-color: rgb(224, 224, 46);
+            background: url("/static/images/about8.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 0% 100% 0% 100% / 43% 0% 100% 57%;
+            border-bottom-right-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .container2 {
+            /* background-color: rgb(157, 162, 194); */
+            width: 90%;
+            height: 400px;
+            /* display: flex; */
+            margin-left: 65px;
+        }
+
+        .container2 p {
+            padding-left: 20px;
+            font-size: 19px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        #p1 {
+            font-size: 19px;
+            margin-left: 370px;
+        }
+
+        #p2 {
+            font-size: 19px;
+            margin-left: 250px;
+        }
+
+        #p3 {
+            font-size: 22px;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+
+        <div class="left">
+            <div class="left_sub">
+                <a href="http://127.0.0.1:8000/customer/home"><h2 id="name">ΞLIΓΞ</h2></a>
+            </div>
+            <div class="left_sub">
+                
+            </div>
+        </div>
+        <div class="center">
+            <input type="search" id="input" placeholder="Search......">
+        </div>
+        <div class="right">
+            <div class="box"><a href="http://127.0.0.1:8000/customer/help">Help</a></div>
+            <div id="profile">
+                <a href="{% url 'customer:account' %}"><img src="{{user.image.url}}"></a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container">
+        <div class="left_about">
+            <p style="margin-left: 20px; margin-top: 20px; font-size: 25px;">ΞLIΓΞ</p>
+            <h3>About Us</h3>
+            <hr>
+            <p><b> Welcome to Elite...!</b></p>
+        </div>
+        <div class="right_about"></div>
+
+    </div>
+    <div class="container2">
+        <p id="p1"> Finally your go-to destination for stylish and affordable furniture.</p>
+        <p> We're a family-owned business founded by a team of passionate designers and furniture experts who believe
+            that everyone should have access to beautiful,<br> high-quality furnishings.
+
+            Our mission is simple: to provide our customers with a curated selection of furniture that meets their
+            unique needs and preferences.<br>Whether you're furnishing a cozy apartment or a spacious home, we have a
+            wide range of styles and designs to choose from, including mid-century modern,<br> contemporary, and rustic.
+
+            At Elite, we're committed to providing exceptional customer service.<br>
+        <p id="p2"> Our team is dedicated to helping you find the perfect furniture pieces for your home, and we're
+            always available</p>
+        <p> to answer any questions you may have. Plus, with fast and reliable shipping, easy returns, and a hassle-free
+            checkout process, shopping with us is a breeze.
+
+            We're passionate about design and believe that furniture should be both beautiful and functional. That's why
+            we carefully curate our selection <br>to ensure that every piece we offer meets our high standards for
+            quality and style.<br>
+
+            <b> Thank you for choosing Elite as your trusted source for furniture. We look forward to helping you create
+                the home of your dreams.</b>
+        </p>
+        <h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Vist Again</h2>
+        <h3 style="text-align: center; word-spacing: 8px; font-family: Arial, Helvetica, sans-serif;">Love From ELITE
+            GROUP</h3>
+    </div>
+</body>
+
+</html>

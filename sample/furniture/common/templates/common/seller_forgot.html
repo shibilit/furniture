@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+
+        .main_home {
+            width: 100%;
+            height: 520px;
+            background: url("/static/images/main4.jpg/");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+
+        }
+
+        #h11 {
+            color: white;
+            font-size: 70px;
+            margin-left: 50px;
+            margin-top: 300px;
+        }
+
+        nav {
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            width: 100%;
+            height: 80px;
+            color: #fff;
+            box-shadow: 2px 2px 5px #888888;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            margin-top: 20px;
+        }
+
+        nav li {
+            padding: 1rem;
+
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 19px;
+            font-weight: 100px;
+        }
+
+        nav a:hover {
+            color: #111110;
+        }
+
+        nav img {
+            width: 20px;
+            height: 30px;
+        }
+
+        input {
+            margin-left: 80px;
+            width: 400px;
+            height: 40px;
+            margin-top: 20px;
+            border-radius: 8px;
+
+        }
+
+        .left {
+            background-color: transparent;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            align-items: center;
+            color: black;
+        }
+
+        #icon {
+            width: 50px;
+            height: 50px;
+            margin-left: 60px;
+        }
+
+        .left ul {
+            margin-top: 7px;
+            margin-left: 60px;
+            color: black;
+        }
+
+        .center {
+            display: flex;
+            background-color: transparent;
+            width: 50%;
+
+        }
+
+        #input {
+            margin-right: 50px;
+        }
+
+        .right {
+            background-color: transparent;
+            color: black;
+            width: 20%;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: space-around;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+
+
+        .main_home form {
+            width: 400px;
+            height: 150px;
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+            padding-top: 30px;
+            border-radius: 6px;
+        }
+
+        form input {
+            width: 260px;
+            height: 30px;
+            border-radius: 8px;
+            margin-right: 70px;
+        }
+
+        /*footer*/
+        .contanier_footer {
+            background-color: rgb(59, 56, 56);
+            width: 100%;
+            height: 390px;
+        }
+
+        .contanier_footer * li {
+            list-style: none;
+            padding: 10px;
+            font-size: 17px;
+        }
+
+        .contanier_footer * li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .contanier_footer h3,
+        h4,
+        h5,
+        p,
+        li {
+            color: #fff;
+        }
+
+        .contanier_footer .container_sub {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            text-align: center;
+            font-family: cursive;
+            padding-top: 30px;
+        }
+
+        .div_4 input {
+            width: 170px;
+            height: 25px;
+            border-radius: 5px;
+        }
+
+        .container_sub2 {
+            display: flex;
+            margin-top: 20px;
+            background-color: black;
+            gap: 10px;
+            text-align: center;
+            align-items: center;
+            font-family: cursive;
+            height: 170px;
+        }
+
+        .container_sub2 .d1 {
+            width: 40%;
+        }
+
+        .container_sub2 .d1 button {
+            width: 200px;
+            height: 35px;
+            background-color: rgb(223, 223, 146);
+            color: black;
+            border-radius: 5px;
+        }
+
+        .container_sub2 .d2 {
+            width: 20%;
+        }
+
+        .container_sub2 .d2 img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .container_sub2 .d3 {
+            width: 40%;
+        }
+
+        .container_sub2 .d3 input {
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_home">
+        <nav>
+
+            <div class="left">
+                <div class="left_sub">
+                    <img src="{% static 'images/logo.png' %}" id="icon">
+                </div>
+                <div class="left_sub">
+                    <ul>
+                        <li><a href="http://127.0.0.1:8000/common/home">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="center">
+                <input type="search" id="input" placeholder="Search......">
+            </div>
+            <div class="right">
+
+            </div>
+        </nav>
+        <div class="sub">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p>Please Enter your mail</p>
+                <input type="mail" placeholder="E-mail" name="forget_mail" id="">
+            </form>
+        </div>
+    </div>
+    <div class="contanier_footer">
+        <div class="container_sub">
+            <div class="div_1">
+                <h3>TOP CATEGORIES</h3>
+                <li><a href="">Table</a> </li>
+                <li><a href="">Chair</a></li>
+                <li><a href="">Sofa</a></li>
+                <li><a href="">Bed</a></li>
+            </div>
+            <div class="div_2">
+                <h3>HELP</h3>
+                <li><a href="">Delivery</a></li>
+                <li><a href="">Returns</a></li>
+                <li><a href="">Track an order</a></li>
+                <li><a href="">Contact us</a></li>
+            </div>
+            <div class="div_3">
+                <h3>ABOUT US</h3>
+                <li><a href="">Careers</a></li>
+                <li><a href="">Terms & Conditios</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Responsibility</a></li>
+            </div>
+            <div class="div_4">
+                <h3>FEEDBACK</h3>
+                <li>Leave a feedback</li>
+                <input type="text" placeholder="Type something.....">
+            </div>
+        </div>
+        <div class="container_sub2">
+            <div class="d1">
+                <h4>FIND A STORE</h4>
+                <button type="submit">STORE LOCATOR</button>
+            </div>
+            <div class="d2">
+                <h5>FOLLOW US</h5>
+                <img src="{% static 'images/mainlogs (3).png' %}">
+                <img src="{% static 'images/mainlogs (2).png' %}">
+                <img src="{% static 'images/mainlogs (1).png' %}">
+                <img src="{% static 'images/youtube.png' %}">
+            </div>
+            <div class="d3">
+                <h5>NEWS LETTER SUBSCRIPTION</h5>
+                <p>Receive product news and upadtes in your mail</p>
+                <input type="text" placeholder="Enter your mail">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

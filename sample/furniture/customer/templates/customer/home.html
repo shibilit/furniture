@@ -1,0 +1,38 @@
+{% extends "customer/master.html" %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block head %} <link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock %}
+   
+  {% block body %}
+  <div style="display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+            background-color: rgb(187, 206, 206);
+            gap: 40px;" >
+    <a href="{% url 'customer:product' 7 %}"><div class="sub-div">CHAIR</div></a>
+    <a href="{% url 'customer:product' 8 %}"><div class="sub_div">TABLE</div></a>
+    <a href="{% url 'customer:product' 9 %}"><div class="sub_div">SOFA</div></a>
+    <a href="{% url 'customer:product' 10 %}"><div class="sub_div">BED</div></a>
+  </div>
+  <div class="main">
+    <!-- <h1 id="h11">Design Your Home<br> With us</h1> -->
+
+  </div>
+  <br><br>
+    <div class="products" >
+      {% for i in data %}
+      <div class="items" >
+        <div class="sub">
+          <a href="{% url 'customer:product_dtls' i.id %}"><img style="width: 260px; height:300px; " src="{{i.pro_image.url}}" ></a>
+           <b>{{i.pro_name}}</b><br>
+          <span style="color: rgb(231, 66, 66);"><b>₹ :</b> <b>{{i.pro_price}}</b> </span><br>
+          <span><b>Rating:</b></span> 
+         </div>
+      </div>
+        
+        {% endfor %}
+     </div>
+
+     {% endblock %}

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/cust_reg.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="sub">
+            <div class="left">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1 id="h1">Sign Up</h1><br><hr id="hr"><br>
+                    
+                    <input type="text" name="c_name" placeholder="name*">
+                    <br><br>
+                    <select  name="c_gender" id="option">Gender
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select><br><br>
+                    <input type="number" name="c_number" placeholder="number*">
+                    <br><br>
+                    <input type="email" name="c_mail" placeholder="email*">
+                    <br><br>
+                    <input type="address" name="c_address" placeholder="address*">
+                    <br><br>
+                     <input type="password" name="c_pass" placeholder="password*">
+                    <br><br>
+                    <input type="password" name="c_confirm pass" placeholder="confirm password*">
+                    <br><br>
+                    <input type="file" id="cust_img" name="c_image"><br><br>
+                    <button type="submit"><p>Sign Up</p></button>
+                    <br><br>
+                    
+                    <p class="new">already have an account?<a href="http://127.0.0.1:8000/common/cust_login">Login</a></p>
+                </form>
+            </div>
+            <div class="right">
+                <img src="{% static 'images/log.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

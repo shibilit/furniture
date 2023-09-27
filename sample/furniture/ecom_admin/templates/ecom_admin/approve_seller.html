@@ -1,0 +1,38 @@
+{% extends "ecom_admin/master.html" %}
+{% load static %}
+{% block title %}approve seller{% endblock %}
+{% block head %} <link rel="stylesheet" href="{% static 'css/approve_seller.css' %}">{% endblock %}
+   
+  {% block body %}
+
+    <h2>APPROVE SELLER</h2>
+    <div class="container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>SELLER NAME</th>
+                    <th>COMPANY NAME</th>
+                    <th>PHONE</th>
+                    <th>E-MAIL</th>
+                    <th>APPROVE</th>
+                    <th>REJECT</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.company_name}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.e_mail}}</td>
+                    <td ><a href="{% url 'ecom_admin:approve_btn' i.id %}"><button id="btn" type="submit">Approve</button></td></a> 
+                    <td ><a href="{% url 'ecom_admin:reject_btn' i.id %}"><button id="btn2" type="submit">Reject</button></td></a> 
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}

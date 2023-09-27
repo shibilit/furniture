@@ -1,0 +1,100 @@
+{% extends "seller/master.html" %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/update_stock.css' %}">{% endblock %}
+
+{% block body %}
+
+<!-- <div class="container">
+    <div class="items">
+        <select name="" id="cat">
+            <option value="">category</option>
+            {% for i in data %}
+            <option value="{{i.id}}">{{i.category_name}}</option>
+            {% endfor %}
+        </select>
+        <select name="" id="pro_cate">
+
+        </select>
+        <input type="number" id="inp" placeholder="Quantity" min="1">
+        <button type="submit">update product</button>
+    </div>
+</div> -->
+
+<!-- <script>
+
+    $('#cat').change(function () {
+        category = $('#cat').val()
+        console.log(category)
+        console.log('Selected')
+        $.ajax({
+            url: "http://127.0.0.1:8000/seller/get_data",
+            method: "POST",
+            data: { 'option': category },
+            success: function (response) {
+                console.log(response.pro_data)
+                hh = ""
+                for (item in response.pro_data) {
+                    hh += `
+                             <option value="${item.id}">${item.pro_name}</option>
+                    
+                            `
+                }
+
+
+
+            }
+        });
+    })
+    $('#cat').change(function () {
+    category = $('#cat').val()
+    console.log(category)
+    console.log(category)
+    $.ajax({
+        url: "http://127.0.0.1:8000/seller/get_data",
+        method: "POST",
+        data: { 'option': category },
+        success: function (response) {
+            console.log(response.pro_data)
+            var pro_id = $('#pro').val();
+            var stock = $('#stock').val();
+            $.ajax({
+                url: "http://127.0.0.1:8000/seller/update_stock",
+                method: "POST",
+                data: { 'pro_id': pro_id, 'stock': stock },
+                success: function (response) {
+                    console.log(response);
+                    // Handle the response from the stock update API
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                    // Handle the error
+                }
+            });
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+            // Handle the error
+        }
+    });
+});
+
+
+
+
+</script> -->
+<!-- update_stock.html -->
+<form method="POST" action="{% url 'update_stock' Product.id %}">
+    {% csrf_token %}
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" value="{{ Product.pro_quantity }}">
+    <br>
+    <label for="price">Price:</label>
+    <input type="text" name="price" value="{{ Product.pro_price }}">
+    <br>
+    <input type="submit" value="Update">
+</form>
+
+
+{% endblock %}

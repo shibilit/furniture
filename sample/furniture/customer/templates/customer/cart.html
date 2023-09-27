@@ -1,0 +1,63 @@
+{% extends "customer/master.html" %}
+{% load static %}
+{% block title %}cart{% endblock %}
+{% block head %} <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+<script src="{% static 'js/cart.js' %}"></script> {% endblock %}
+   
+  {% block body %}
+   
+   
+    <br><br>
+    <div class="container">
+            {% if grand_total == 0 %}
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; ">
+            <img id="empty_img" src="{% static 'images/empty cart.png' %}" >
+            <h1>Nothing has added yet!!!!</h1>
+            </div>
+            
+            {% else %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>#NO</th>
+                        <th>PRODUCT</th>
+                        <th>IMAGE</th>
+                        <th>PRICE</th>
+                        <th>QTY</th>
+                        <th>TOTAL</th>
+                        <th>CHOICE</th>
+                        
+                    </tr>
+                   
+                </thead>
+                <!-- <hr><hr> -->
+                <tbody>
+                    
+                    {% for cart in data %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{cart.product.pro_name}}</td>
+                        <td><img style="width: 100px; height: 80px; border-radius: 8px;" src="{{cart.product.pro_image.url}}" ></td>
+                        <td>₹ {{cart.product.pro_price}}</td>
+                        <td>{{cart.quantity}}</td>
+                        <td>₹ {{cart.total}}</td>
+                        <td id="first"><a href="{% url 'customer:remove' cart.product_id %}"><button>REMOVE</button></a> </td>
+                    </tr>
+                    {% endfor %}
+                    <tr id="second">
+                        <td colspan="3">GRAND TOTAL</td>
+                        <td colspan="2">₹ {{grand_total}}</td>
+                        <td colspan="2"><button id="check">checkout</button></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+           
+            
+            {% endif %}
+       
+    </div>
+    
+   
+    {% endblock %}
+ 

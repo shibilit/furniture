@@ -1,0 +1,35 @@
+.container{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    margin: auto;
+  }
+  #h2{
+    text-align: center;
+  }
+  .sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    margin: auto;
+    box-shadow: 2px 2px 5px #888888;
+  
+  }
+  .container form textarea{
+    border-radius: 7px;
+    
+  }
+  #inp{
+      width: 70%;
+      height: 30px;
+      border-radius: 7px;
+      margin-right: 10px;
+  }
+  .container button{
+      width: 90px; 
+      height: 34px; 
+      border-radius: 7px;
+      margin-left: 40%;
+      margin-top: 20px;
+  }
